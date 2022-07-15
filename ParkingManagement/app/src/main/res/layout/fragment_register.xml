@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginFragment"
+    android:orientation="vertical">
+
+    <!--header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PARKING MANAGEMENT"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
+    </LinearLayout>
+
+    <!--body-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_gravity="bottom"
+        android:background="#c7c7c7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginHorizontal="25dp"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username:"
+                    android:textSize="25dp"></TextView>
+
+                <EditText
+                    android:id="@+id/txt_registerUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"></EditText>
+
+                <TextView
+                    android:id="@+id/tv_UserErr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#fa0b02"
+                    android:layout_marginBottom="15dp"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Password:"
+                    android:textSize="25dp"></TextView>
+
+                <EditText
+                    android:id="@+id/txt_registerPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:inputType="textPassword"></EditText>
+
+                <TextView
+                    android:id="@+id/tv_PassErr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#fa0b02"
+                    android:layout_marginBottom="15dp"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm password:"
+                    android:textSize="25dp"></TextView>
+
+                <EditText
+                    android:id="@+id/txt_confirmRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:inputType="textPassword"></EditText>
+
+                <TextView
+                    android:id="@+id/tv_RePassErr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#fa0b02"
+                    android:layout_marginBottom="15dp"></TextView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign up"
+                    android:textSize="25dp"
+                    android:backgroundTint="#F1C50E"></Button>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login here"
+                    android:backgroundTint="#F1C50E"
+                    android:layout_gravity="center_horizontal"></Button>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--footer-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hotline: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0905 123 456"
+                    android:textColor="#F1C50E"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="parking@gmail.com"
+                    android:textColor="#F1C50E"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

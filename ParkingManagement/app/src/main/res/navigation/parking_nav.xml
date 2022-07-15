@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parking_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.parkingmanagement.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.parkingmanagement.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.parkingmanagement.view.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_parkingLotsFragment"
+            app:destination="@id/parkingLotsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_pricingFragment"
+            app:destination="@id/pricingFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_vehicleFragment"
+            app:destination="@id/vehicleFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_userInfoFragment2"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parkingLotsFragment"
+        android:name="com.example.parkingmanagement.view.ParkingLotsFragment"
+        android:label="fragment_parking_lots"
+        tools:layout="@layout/fragment_parking_lots" >
+        <action
+            android:id="@+id/action_parkingLotsFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_parkingLotsFragment_to_parkingFragment"
+            app:destination="@id/parkingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pricingFragment"
+        android:name="com.example.parkingmanagement.view.PricingFragment"
+        android:label="fragment_pricing"
+        tools:layout="@layout/fragment_pricing" >
+        <action
+            android:id="@+id/action_pricingFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleFragment"
+        android:name="com.example.parkingmanagement.view.VehicleFragment"
+        android:label="fragment_vehicle"
+        tools:layout="@layout/fragment_vehicle" >
+        <action
+            android:id="@+id/action_vehicleFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.parkingmanagement.view.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_userInfoFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parkingFragment"
+        android:name="com.example.parkingmanagement.view.ParkingFragment"
+        android:label="fragment_parking"
+        tools:layout="@layout/fragment_parking" >
+        <action
+            android:id="@+id/action_parkingFragment_to_parkingLotsFragment"
+            app:destination="@id/parkingLotsFragment" />
+    </fragment>
+</navigation>

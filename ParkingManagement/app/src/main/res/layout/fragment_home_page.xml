@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginFragment"
+    android:orientation="vertical">
+
+    <!--header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_baseline_account_circle_24"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello user"
+                android:textSize="20dp"
+                android:layout_gravity="bottom"></TextView>
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_logout"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="200dp"></ImageButton>
+    </LinearLayout>
+
+    <!--body-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_gravity="bottom"
+        android:background="#c7c7c7"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parking management"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginVertical="20dp"></TextView>
+
+
+        <Button
+            android:id="@+id/btn_parkingLots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="10dp"
+            android:text="parking lots"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_lots"
+            android:backgroundTint="#F1C50E"
+            android:paddingVertical="10dp"></Button>
+
+        <Button
+            android:id="@+id/btn_pricing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="10dp"
+            android:text="Price table"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_pricing"
+            android:backgroundTint="#F1C50E"
+            android:paddingVertical="10dp"></Button>
+
+        <Button
+            android:id="@+id/btn_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="10dp"
+            android:text="user's vehicles"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_vehicle"
+            android:backgroundTint="#F1C50E"
+            android:paddingVertical="10dp"></Button>
+
+
+    </LinearLayout>
+
+    <!--footer-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hotline: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0905 123 456"
+                    android:textColor="#F1C50E"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textStyle="bold"
+                    android:textSize="20dp"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="parking@gmail.com"
+                    android:textColor="#F1C50E"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
