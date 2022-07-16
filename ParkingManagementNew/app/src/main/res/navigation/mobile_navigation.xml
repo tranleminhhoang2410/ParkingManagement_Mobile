@@ -9,17 +9,79 @@
         android:id="@+id/navigation_home"
         android:name="com.example.parking.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.parking.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_pricing"
+            app:destination="@id/navigation_pricing" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_parking_lots"
+            app:destination="@id/navigation_parking_lots" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_vehicle"
+            app:destination="@id/navigation_vehicle" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_user_page"
+            app:destination="@id/navigation_user_page" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_aboutUs"
+            app:destination="@id/navigation_aboutUs" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.parking.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_pricing"
+        android:name="com.example.parking.ui.navigation_pricing"
+        android:label="fragment_pricing_page"
+        tools:layout="@layout/fragment_pricing_page" >
+        <action
+            android:id="@+id/action_navigation_pricing_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_parking_lots"
+        android:name="com.example.parking.ui.navigation_parking_lots"
+        android:label="fragment_parking_lots"
+        tools:layout="@layout/fragment_parking_lots" >
+        <action
+            android:id="@+id/action_navigation_parking_lots_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_user_page"
+        android:name="com.example.parking.ui.navigation_user_page"
+        android:label="fragment_user_page"
+        tools:layout="@layout/fragment_user_page" >
+        <action
+            android:id="@+id/action_navigation_user_page_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_vehicle"
+        android:name="com.example.parking.ui.navigation_vehicle"
+        android:label="fragment_vehicle"
+        tools:layout="@layout/fragment_vehicle" >
+        <action
+            android:id="@+id/action_navigation_vehicle_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_aboutUs"
+        android:name="com.example.parking.ui.navigation_aboutUs"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_navigation_aboutUs_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 </navigation>
