@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.navigation_vehicle">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.navigation_vehicle"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!--header-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="25dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
+                    android:layout_gravity="center"></ImageButton>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/logo"
+                    android:layout_marginLeft="90dp"></ImageView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--body-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="#c7c7c7"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your vehicles"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="15dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email@gmail.com "
+                    android:textSize="20dp"></EditText>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="15dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone: "
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0905123321"
+                    android:textSize="20dp"></EditText>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_addVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginVertical="10dp"
+                android:text="add new"
+                android:textColor="@color/black"
+                android:backgroundTint="#F1C50E"></Button>
+
+            <Button
+                android:id="@+id/btn_toProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:paddingRight="50dp"
+                android:text="Your profile"
+                android:textColor="@color/black"
+                android:backgroundTint="#F1C50E"
+                android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"></Button>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="10dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

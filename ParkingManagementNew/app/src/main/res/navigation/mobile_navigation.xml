@@ -65,6 +65,9 @@
         <action
             android:id="@+id/action_navigation_user_page_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_user_page_to_navigation_vehicle"
+            app:destination="@id/navigation_vehicle" />
     </fragment>
     <fragment
         android:id="@+id/navigation_vehicle"
@@ -74,6 +77,9 @@
         <action
             android:id="@+id/action_navigation_vehicle_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_vehicle_to_navigation_user_page"
+            app:destination="@id/navigation_user_page" />
     </fragment>
     <fragment
         android:id="@+id/navigation_aboutUs"

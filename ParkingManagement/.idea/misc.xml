@@ -12,6 +12,7 @@
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.16" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.16" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_bus.xml" value="0.247" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_car.xml" value="0.1585" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2195" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_logout.xml" value="0.2195" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/drawable/ic_lots.xml" value="0.2195" />
@@ -22,6 +23,7 @@
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/card_price.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_home_page.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_login.xml" value="0.259375" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_parking.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_parking_lots.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_pricing.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagement/app/src/main/res/layout/fragment_register.xml" value="0.259375" />
