@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="25dp">
@@ -22,22 +22,9 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_baseline_account_circle_24"></ImageButton>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hello user"
-                android:textSize="20dp"
-                android:layout_gravity="bottom"></TextView>
+                android:background="@drawable/ic_baseline_arrow_back_ios_new_24"></ImageButton>
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_logout"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="200dp"></ImageButton>
     </LinearLayout>
 
     <!--body-->
@@ -48,40 +35,40 @@
         android:background="#c7c7c7"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_car"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:text="Car"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
-            <Button
-                android:id="@+id/btn_bus"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:text="bus"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
-            <Button
-                android:id="@+id/btn_truck"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:text="Truck"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <Button
+                    android:id="@+id/btn_car"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="Car"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:backgroundTint="#F1C50E"
+                    android:paddingVertical="10dp"></Button>
+                <Button
+                    android:id="@+id/btn_bus"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="bus"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:backgroundTint="#F1C50E"
+                    android:paddingVertical="10dp"></Button>
+                <Button
+                    android:id="@+id/btn_truck"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="Truck"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
 
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
-
-        </LinearLayout>
+                    android:backgroundTint="#F1C50E"
+                    android:paddingVertical="10dp"></Button>
+            </TableRow>
+        </TableLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -109,49 +96,54 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical">
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hotline: "
-                    android:textStyle="bold"
-                    android:textSize="20dp"></TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0905 123 456"
-                    android:textColor="#F1C50E"
-                    android:textSize="20dp"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email: "
-                    android:textStyle="bold"
-                    android:textSize="20dp"></TextView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="parking@gmail.com"
-                    android:textColor="#F1C50E"
-                    android:textSize="20dp"></TextView>
-            </LinearLayout>
-        </LinearLayout>
+                android:layout_gravity="center_vertical">
 
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="Home"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_home_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="about us"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="User"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_notifications_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="User"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_account_circle_24"
+                    android:backgroundTint="@color/white"></Button>
+
+            </LinearLayout>
     </LinearLayout>
 
 

@@ -1,14 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ParkingLotsFragment">
+    tools:context=".view.LoginFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--header-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="100dp"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_baseline_arrow_back_ios_new_24"></ImageButton>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--body-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom"
+        android:background="#c7c7c7"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_areaA"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F1C50E"
+                android:drawableTop="@drawable/ic_car"
+                android:paddingVertical="10dp"
+                android:text="A"
+                android:textColor="@color/black"
+                android:textSize="15dp"></Button>
+
+            <Button
+                android:id="@+id/btn_areaB"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F1C50E"
+                android:drawableTop="@drawable/ic_car"
+                android:paddingVertical="10dp"
+                android:text="B"
+                android:textColor="@color/black"
+                android:textSize="15dp"></Button>
+
+            <Button
+                android:id="@+id/btn_areaC"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F1C50E"
+                android:drawableTop="@drawable/ic_car"
+                android:paddingVertical="10dp"
+                android:text="C"
+                android:textColor="@color/black"
+                android:textSize="15dp"></Button>
+
+            <Button
+                android:id="@+id/btn_areaD"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F1C50E"
+                android:drawableTop="@drawable/ic_bus"
+                android:paddingVertical="10dp"
+                android:text="D"
+                android:textColor="@color/black"
+                android:textSize="15dp"></Button>
+
+            <Button
+                android:id="@+id/btn_areaE"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#F1C50E"
+                android:drawableTop="@drawable/ic_truck"
+                android:paddingVertical="10dp"
+                android:text="E"
+                android:textColor="@color/black"
+                android:textSize="15dp"></Button>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/areaTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:text="Area A"
+            android:textSize="30dp"
+            android:textStyle="bold"></TextView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_parkingLot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+    <!--footer-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="Home"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_home_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="about us"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:text="User"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_notifications_24"
+                    android:backgroundTint="@color/white"></Button>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="User"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="12dp"
+                    android:drawableTop="@drawable/ic_baseline_account_circle_24"
+                    android:backgroundTint="@color/white"></Button>
+
+            </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
