@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.parking.ui.home.HomeFragment"
+        android:name="com.example.parking.ui.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -28,11 +28,14 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_aboutUs"
             app:destination="@id/navigation_aboutUs" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_login"
+            app:destination="@id/navigation_login" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.parking.ui.notifications.NotificationsFragment"
+        android:name="com.example.parking.ui.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" >
         <action
@@ -89,5 +92,26 @@
         <action
             android:id="@+id/action_navigation_aboutUs_to_navigation_home"
             app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.parking.ui.navigation_login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_signup"
+            app:destination="@id/navigation_signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_signup"
+        android:name="com.example.parking.ui.navigation_signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_navigation_signup_to_navigation_login"
+            app:destination="@id/navigation_login" />
     </fragment>
 </navigation>

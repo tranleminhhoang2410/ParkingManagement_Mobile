@@ -14,26 +14,21 @@
             android:layout_height="100dp"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
+                android:background="@drawable/logo"
+                android:layout_marginLeft="25dp"></ImageView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:drawableTop="@drawable/ic_baseline_input_24"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="25dp">
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
-                    android:layout_gravity="center"></ImageButton>
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/logo"
-                    android:layout_marginLeft="90dp"></ImageView>
-
-            </LinearLayout>
+                android:layout_marginLeft="175dp"></Button>
 
         </LinearLayout>
 
@@ -89,13 +84,111 @@
                 android:textStyle="bold"
                 android:layout_marginVertical="10dp"></TextView>
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_pricing"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Per hour:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"></TextView>
+                <TextView
+                    android:id="@+id/tv_priceHour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000000 VND"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Per day:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"></TextView>
+                <TextView
+                    android:id="@+id/tv_priceDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000000 VND"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Per week:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"></TextView>
+                <TextView
+                    android:id="@+id/tv_priceWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000000 VND"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Per month:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"></TextView>
+                <TextView
+                    android:id="@+id/tv_priceMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000000 VND"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_marginLeft="50dp">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Per year:"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"></TextView>
+                <TextView
+                    android:id="@+id/tv_priceYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000000 VND"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
 
 
         </LinearLayout>

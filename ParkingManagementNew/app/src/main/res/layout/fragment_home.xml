@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".ui.HomeFragment">
 
         <!--header-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/logo"></ImageView>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/logo"
+                android:layout_marginLeft="25dp"></ImageView>
+
+            <Button
+                android:id="@+id/btn_log_in_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="175dp"></Button>
 
         </LinearLayout>
 
@@ -28,17 +38,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            android:background="#c7c7c7"
+            android:background="@drawable/parking_background"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/container_homepage_stuff"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parking management"
-                android:gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_marginVertical="20dp"></TextView>
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="25dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome User"
+                    android:textSize="35dp"
+                    android:textColor="@color/default_yellow"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
 
 
             <Button
@@ -47,12 +66,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginVertical="10dp"
+                android:backgroundTint="#F1C50E"
+                android:drawableLeft="@drawable/ic_lots"
+                android:paddingVertical="10dp"
                 android:text="parking lots"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:drawableLeft="@drawable/ic_lots"
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
+                android:textSize="20dp"></Button>
 
             <Button
                 android:id="@+id/btn_pricing"
@@ -60,12 +79,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginVertical="10dp"
+                android:backgroundTint="#F1C50E"
+                android:drawableLeft="@drawable/ic_pricing"
+                android:paddingVertical="10dp"
                 android:text="Price table"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:drawableLeft="@drawable/ic_pricing"
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
+                android:textSize="20dp"></Button>
 
             <Button
                 android:id="@+id/btn_vehicle"
@@ -73,12 +92,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginVertical="10dp"
+                android:backgroundTint="#F1C50E"
+                android:drawableLeft="@drawable/ic_vehicle"
+                android:paddingVertical="10dp"
                 android:text="user's vehicles"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:drawableLeft="@drawable/ic_vehicle"
-                android:backgroundTint="#F1C50E"
-                android:paddingVertical="10dp"></Button>
+                android:textSize="20dp"></Button>
         </LinearLayout>
     </LinearLayout>
 </layout>

@@ -2,6 +2,7 @@ package com.example.parking.ui;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,58 +10,89 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parking.R;
+import com.example.parking.apiService.AppApiService;
+import com.example.parking.databinding.FragmentPricingPageBinding;
+import com.example.parking.model.VehicleType;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link navigation_pricing#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 public class navigation_pricing extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public navigation_pricing() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment navigation_pricing.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static navigation_pricing newInstance(String param1, String param2) {
-        navigation_pricing fragment = new navigation_pricing();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private VehicleType type;
+    private ArrayList<VehicleType> types;
+    private FragmentPricingPageBinding binding;
+    private AppApiService apiService;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        apiService = new AppApiService();
+
+//        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+//        navBar.setVisibility(View.GONE);
+
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            types = getArguments().getParcelableArrayList("passType");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pricing_page, container, false);
+        binding = DataBindingUtil.inflate(
+                getLayoutInflater(), R.layout.fragment_pricing_page, null, false
+        );
+        View root = binding.getRoot();
+
+        find(1);
+
+        binding.btnCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                find(1);
+            }
+        });
+
+        binding.btnBus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                find(2);
+            }
+        });
+
+        binding.btnTruck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                find(3);
+            }
+        });
+
+        return root;
+    }
+
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+//        navBar.setVisibility(View.VISIBLE);
+//    }
+
+    private void setPriceText(VehicleType t){
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        binding.tvPriceHour.setText(formatter.format(t.getPricePerHour())+" VND");
+        binding.tvPriceDay.setText(formatter.format(t.getPricePerDay())+" VND");
+        binding.tvPriceWeek.setText(formatter.format(t.getPricePerWeek())+" VND");
+        binding.tvPriceMonth.setText(formatter.format(t.getPricePerMonth())+" VND");
+        binding.tvPriceYear.setText(formatter.format(t.getPricePerYear())+" VND");
+    }
+
+    private void find(int id){
+        for(VehicleType t : types){
+            if(t.getId()==id){
+                setPriceText(t);
+            }
+        }
     }
 }
