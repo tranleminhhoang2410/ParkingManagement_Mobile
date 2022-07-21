@@ -1,66 +1,160 @@
 package com.example.parking.ui;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parking.R;
+import com.example.parking.adapter.ParkingLotAdapter;
+import com.example.parking.adapter.VehicleAdapter;
+import com.example.parking.apiService.AppApiService;
+import com.example.parking.databinding.FragmentParkingLotsBinding;
+import com.example.parking.databinding.FragmentVehicleBinding;
+import com.example.parking.model.Lot;
+import com.example.parking.model.User;
+import com.example.parking.model.Vehicle;
+import com.example.parking.utils.DataHolder;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link navigation_parking_lots#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class navigation_parking_lots extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentParkingLotsBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public navigation_parking_lots() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment navigation_parking_lots.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static navigation_parking_lots newInstance(String param1, String param2) {
-        navigation_parking_lots fragment = new navigation_parking_lots();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private ArrayList<Lot> lotsArrayList;
+    private User loggedUser;
+    private AppApiService apiService;
+    private ParkingLotAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parking_lots, container, false);
+        binding = FragmentParkingLotsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        apiService = new AppApiService();
+        loggedUser = DataHolder.getInstance().getLoginUser();
+
+        if(loggedUser==null){
+            setLoginButton(binding);
+        }else{
+            setLogoutButton(binding);
+        }
+
+        binding.rvParkingLot.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        binding.areaTitle.setText("AREA A");
+        setLotRecyclerView("A", binding);
+
+        binding.btnAreaA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.areaTitle.setText("AREA A");
+                setLotRecyclerView("A", binding);
+            }
+        });
+        binding.btnAreaB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.areaTitle.setText("AREA B");
+                setLotRecyclerView("B", binding);
+            }
+        });
+        binding.btnAreaC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.areaTitle.setText("AREA C");
+                setLotRecyclerView("C", binding);
+            }
+        });
+        binding.btnAreaD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.areaTitle.setText("AREA D");
+                setLotRecyclerView("D", binding);
+            }
+        });
+        binding.btnAreaE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.areaTitle.setText("AREA E");
+                setLotRecyclerView("E", binding);
+            }
+        });
+
+        return root;
+    }
+
+    private void setLotRecyclerView(String area, FragmentParkingLotsBinding binding){
+        lotsArrayList = new ArrayList<>();
+        adapter = new ParkingLotAdapter(lotsArrayList);
+
+        binding.rvParkingLot.setAdapter(adapter);
+
+//        binding.checklistItemsLayout.removeAllViews();
+        apiService.GetAllLots(area).enqueue(new Callback<ArrayList<Lot>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Lot>> call, Response<ArrayList<Lot>> response) {
+                if(response.isSuccessful()){
+                    for (Lot lot: response.body()) {
+                        Log.d("DEBUG", "" + lot.getArea()+lot.getPosition() + " " + lot.getStatus());
+                        lotsArrayList.add(lot);
+                        adapter.notifyDataSetChanged();
+                    }
+                }else{
+                    Log.d("DEBUG", "" + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Lot>> call, Throwable t) {
+                Log.d("DEBUG", "" + t.getMessage());
+            }
+        });
+    }
+
+    private void setLoginButton(FragmentParkingLotsBinding binding){
+        Drawable loginIcon = getContext().getResources().getDrawable(R.drawable.ic_baseline_input_24);
+        binding.btnLogInOut.setText("LOGIN");
+        binding.btnLogInOut.setCompoundDrawablesWithIntrinsicBounds(null, loginIcon, null, null);
+        binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("passMessage", "message");
+                Navigation.findNavController(v).navigate(R.id.navigation_login, bundle);
+            }
+        });
+    }
+
+    private void setLogoutButton(FragmentParkingLotsBinding binding){
+        Drawable loginIcon = getContext().getResources().getDrawable(R.drawable.ic_baseline_logout_24);
+        binding.btnLogInOut.setText("LOGOUT");
+        binding.btnLogInOut.setCompoundDrawablesWithIntrinsicBounds(null, loginIcon, null, null);
+        binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

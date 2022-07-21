@@ -3,14 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Mobile/Lien/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Mobile/Lien/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_pricing_page.xml" value="0.1" />
-        <entry key="..\:/Mobile/Linh/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_notifications.xml" value="0.21784420289855072" />
-        <entry key="..\:/Mobile/Nguyen/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_login.xml" value="0.1" />
-        <entry key="..\:/Mobile/Nguyen/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_signup.xml" value="0.1" />
-        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
-        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_user_page.xml" value="0.1" />
-        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_vehicle.xml" value="0.1" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.165" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.142" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.153" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.153" />
@@ -24,16 +17,20 @@
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/card_parking_lot.xml" value="0.24682971014492755" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/card_price.xml" value="0.24682971014492755" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/card_vehicle.xml" value="0.24682971014492755" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/card_vehicle_id.xml" value="0.25833333333333336" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_about_us.xml" value="0.24682971014492755" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_check_in.xml" value="0.259375" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_check_out.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_dashboard.xml" value="0.21784420289855072" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_login.xml" value="0.259375" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_lot_detail.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_notifications.xml" value="0.21784420289855072" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_parking_lots.xml" value="0.24682971014492755" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_pricing_page.xml" value="0.21784420289855072" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_signup.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_user_page.xml" value="0.21784420289855072" />
-        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_vehicle.xml" value="0.24682971014492755" />
+        <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_vehicle.xml" value="0.264" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/menu/bottom_nav_menu.xml" value="0.259375" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/xml/network_security_config.xml" value="0.24682971014492755" />
       </map>

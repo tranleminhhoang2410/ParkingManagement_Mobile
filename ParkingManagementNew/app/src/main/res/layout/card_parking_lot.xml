@@ -17,23 +17,31 @@
         android:padding="10dp">
 
         <Button
-            android:id="@+id/tv_lotId"
+            android:id="@+id/btn_lotId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#F1C50E"
             android:text="A1"
             android:textColor="@color/black"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="18dp"
             android:textStyle="bold"></Button>
 
         <TextView
+            android:id="@+id/tv_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Empty"
             android:textSize="18dp"
             android:gravity="right"
-            android:layout_marginTop="10dp"></TextView>
+            android:textColor="@color/success"></TextView>
+        <TextView
+            android:id="@+id/tv_parkingVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18dp"
+            android:gravity="right"></TextView>
 
     </LinearLayout>
 

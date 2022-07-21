@@ -1,5 +1,7 @@
 package com.example.parking.model;
 
+import java.util.Date;
+
 public class Invoice {
     public int id;
     public String checkinTime;

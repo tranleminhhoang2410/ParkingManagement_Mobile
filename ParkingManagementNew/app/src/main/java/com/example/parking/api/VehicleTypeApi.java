@@ -3,6 +3,7 @@ package com.example.parking.api;
 import com.example.parking.model.VehicleType;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.GET;

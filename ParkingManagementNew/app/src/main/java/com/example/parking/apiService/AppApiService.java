@@ -4,15 +4,16 @@ import com.example.parking.api.AccountApi;
 import com.example.parking.api.LotApi;
 import com.example.parking.api.UserApi;
 import com.example.parking.api.VehicleApi;
-import com.example.parking.api.VehicleTypeApi;
 import com.example.parking.model.Account;
 import com.example.parking.model.Invoice;
 import com.example.parking.model.Lot;
 import com.example.parking.model.User;
 import com.example.parking.model.Vehicle;
 import com.example.parking.model.VehicleType;
+import com.example.parking.api.VehicleTypeApi;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import io.reactivex.rxjava3.core.Single;
