@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Mobile/Linh/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_notifications.xml" value="0.21784420289855072" />
+        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
+        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_user_page.xml" value="0.1" />
+        <entry key="..\:/Mobile/Nhan/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/layout/fragment_vehicle.xml" value="0.1" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.142" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.153" />
         <entry key="..\:/ParkingManagement_Mobile/ParkingManagementNew/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.153" />
