@@ -77,6 +77,9 @@
         <action
             android:id="@+id/action_navigation_user_page_to_navigation_vehicle"
             app:destination="@id/navigation_vehicle" />
+        <action
+            android:id="@+id/action_navigation_user_page_to_navigation_user_invoice"
+            app:destination="@id/navigation_user_invoice" />
     </fragment>
     <fragment
         android:id="@+id/navigation_vehicle"
@@ -137,5 +140,14 @@
         <action
             android:id="@+id/action_navigation_check_out_to_navigation_parking_lots"
             app:destination="@id/navigation_parking_lots" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_user_invoice"
+        android:name="com.example.parking.ui.navigation_user_invoice"
+        android:label="fragment_navigation_user_invoice"
+        tools:layout="@layout/fragment_navigation_user_invoice" >
+        <action
+            android:id="@+id/action_navigation_user_invoice_to_navigation_user_page"
+            app:destination="@id/navigation_user_page" />
     </fragment>
 </navigation>
