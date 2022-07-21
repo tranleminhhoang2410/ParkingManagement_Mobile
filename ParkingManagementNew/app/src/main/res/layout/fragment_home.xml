@@ -51,9 +51,10 @@
                 android:paddingBottom="10dp">
 
                 <TextView
+                    android:id="@+id/tv_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Welcome User"
+                    android:text="Welcome!!!"
                     android:textSize="35dp"
                     android:textColor="@color/default_yellow"
                     android:textStyle="bold"></TextView>

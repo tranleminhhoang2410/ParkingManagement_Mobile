@@ -6,16 +6,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.parking.R;
+import com.example.parking.apiService.AppApiService;
+import com.example.parking.model.User;
+import com.example.parking.model.VehicleType;
 import com.example.parking.databinding.FragmentHomeBinding;
+import com.example.parking.utils.DataHolder;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
@@ -44,13 +54,14 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
         apiService = new AppApiService();
 
+        loggedUser = DataHolder.getInstance().getLoginUser();
+
         if(loggedUser==null){
             setLoginButton(binding);
         }else{
             setLogoutButton(binding);
+            binding.tvUser.setText("Hello "+loggedUser.getName());
         }
-
-//        binding.tvUser.setText("Hello "+loggedUser.getName());
 
         binding.btnPricing.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +72,6 @@ public class HomeFragment extends Fragment {
 
                             @Override
                             public void onSuccess(@io.reactivex.rxjava3.annotations.NonNull ArrayList<VehicleType> vehicleTypes) {
-                                Log.d("DEBUG", "" + type);
                                 types = vehicleTypes;
                                 Bundle bundle = new Bundle();
                                 bundle.putParcelableArrayList("passType", types);
@@ -73,6 +83,30 @@ public class HomeFragment extends Fragment {
                                 Log.d("DEBUG", "Fail: "+e.getMessage());
                             }
                         });
+            }
+        });
+
+        binding.btnVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(loggedUser == null){
+                    Toast.makeText(getContext(), "Please login to see your vehicles", Toast.LENGTH_LONG).show();
+                }else{
+                    Bundle bundle = new Bundle();
+                    Navigation.findNavController(v).navigate(R.id.navigation_vehicle, bundle);
+                }
+            }
+        });
+
+        binding.btnParkingLots.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(loggedUser == null){
+                    Toast.makeText(getContext(), "Please login to see current parking lots", Toast.LENGTH_LONG).show();
+                }else{
+                    Bundle bundle = new Bundle();
+                    Navigation.findNavController(v).navigate(R.id.navigation_parking_lots, bundle);
+                }
             }
         });
         return root;

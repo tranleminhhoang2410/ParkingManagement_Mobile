@@ -21,10 +21,10 @@
                 android:layout_marginLeft="25dp"></ImageView>
 
             <Button
+                android:id="@+id/btn_log_in_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:drawableTop="@drawable/ic_baseline_input_24"
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:layout_gravity="center_vertical"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
-            android:background="#c7c7c7"
+            android:background="@drawable/parking_background"
             android:orientation="vertical">
 
             <TableLayout
@@ -75,119 +75,127 @@
                 </TableRow>
             </TableLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pricing table"
-                android:gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_marginVertical="10dp"></TextView>
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:paddingVertical="20dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="50dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pricing table"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"></TextView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginLeft="50dp">
-                <TextView
-                    android:layout_width="150dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Per hour:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-                <TextView
-                    android:id="@+id/tv_priceHour"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Per hour:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"></TextView>
+                    <TextView
+                        android:id="@+id/tv_priceHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000000 VND"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1000000 VND"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginLeft="50dp">
-                <TextView
-                    android:layout_width="150dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Per day:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"></TextView>
+                    <TextView
+                        android:id="@+id/tv_priceDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000000 VND"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Per day:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-                <TextView
-                    android:id="@+id/tv_priceDay"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Per week:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"></TextView>
+                    <TextView
+                        android:id="@+id/tv_priceWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000000 VND"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1000000 VND"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginLeft="50dp">
-                <TextView
-                    android:layout_width="150dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Per month:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"></TextView>
+                    <TextView
+                        android:id="@+id/tv_priceMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000000 VND"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Per week:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-                <TextView
-                    android:id="@+id/tv_priceWeek"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000000 VND"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginLeft="50dp">
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Per month:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-                <TextView
-                    android:id="@+id/tv_priceMonth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000000 VND"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"></TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:layout_marginLeft="50dp">
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Per year:"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"></TextView>
-                <TextView
-                    android:id="@+id/tv_priceYear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000000 VND"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"></TextView>
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginLeft="25dp">
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Per year:"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"></TextView>
+                    <TextView
+                        android:id="@+id/tv_priceYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000000 VND"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
             </LinearLayout>
 
 

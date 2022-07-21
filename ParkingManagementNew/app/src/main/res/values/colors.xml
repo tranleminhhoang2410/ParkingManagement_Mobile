@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="default_yellow">#F1C50E</color>
+    <color name="disable_button">#bfbfbf</color>
+    <color name="success">#32964d</color>
 </resources>
