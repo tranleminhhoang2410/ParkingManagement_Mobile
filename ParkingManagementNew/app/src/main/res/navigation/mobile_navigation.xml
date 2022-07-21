@@ -59,6 +59,12 @@
         <action
             android:id="@+id/action_navigation_parking_lots_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_parking_lots_to_navigation_check_in"
+            app:destination="@id/navigation_check_in" />
+        <action
+            android:id="@+id/action_navigation_parking_lots_to_navigation_check_out"
+            app:destination="@id/navigation_check_out" />
     </fragment>
     <fragment
         android:id="@+id/navigation_user_page"
@@ -113,5 +119,23 @@
         <action
             android:id="@+id/action_navigation_signup_to_navigation_login"
             app:destination="@id/navigation_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_check_in"
+        android:name="com.example.parking.ui.navigation_check_in"
+        android:label="fragment_check_in"
+        tools:layout="@layout/fragment_check_in" >
+        <action
+            android:id="@+id/action_navigation_check_in_to_navigation_parking_lots"
+            app:destination="@id/navigation_parking_lots" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_check_out"
+        android:name="com.example.parking.ui.navigation_check_out"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_navigation_check_out_to_navigation_parking_lots"
+            app:destination="@id/navigation_parking_lots" />
     </fragment>
 </navigation>

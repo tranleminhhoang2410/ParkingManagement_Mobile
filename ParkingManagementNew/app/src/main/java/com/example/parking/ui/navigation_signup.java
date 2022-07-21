@@ -3,64 +3,111 @@ package com.example.parking.ui;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parking.R;
+import com.example.parking.apiService.AppApiService;
+import com.example.parking.databinding.FragmentSignupBinding;
+import com.example.parking.model.Account;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link navigation_signup#newInstance} factory method to
- * create an instance of this fragment.
- */
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class navigation_signup extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public navigation_signup() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment navigation_signup.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static navigation_signup newInstance(String param1, String param2) {
-        navigation_signup fragment = new navigation_signup();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private FragmentSignupBinding binding;
+    private AppApiService apiService;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+        navBar.setVisibility(View.GONE);
+
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false);
+        binding = FragmentSignupBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        apiService = new AppApiService();
+
+        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean canRegister = true;
+                String username = binding.txtRegisterUsername.getText().toString();
+                String password = binding.txtRegisterPassword.getText().toString();
+                String rePassword = binding.txtConfirmRegisterPassword.getText().toString();
+
+                if(username.isEmpty() || password.isEmpty() || rePassword.isEmpty()){
+                    binding.tvReError.setText("Register information must not be empty! Try again!");
+                }else if(!password.equals(rePassword)){
+                    binding.tvReError.setText("Password doesn't match confirm password! Try again! ");
+                }else{
+                    apiService.FindByUsername(username).enqueue(new Callback<Account>() {
+                        @Override
+                        public void onResponse(Call<Account> call, Response<Account> response) {
+                            if(response.isSuccessful()){
+                                if(response.body()!=null){
+                                    binding.tvReError.setText("Username existed! Try again! "+ response.body());
+                                }else{
+                                    apiService.Register(username, password, rePassword).enqueue(new Callback<Account>() {
+                                        @Override
+                                        public void onResponse(Call<Account> call, Response<Account> response) {
+                                            if(response.isSuccessful()) {
+                                                Log.d("DEBUG", "Success");
+                                                Bundle bundle = new Bundle();
+                                                Navigation.findNavController(v).navigate(R.id.navigation_login, bundle);
+                                            }
+                                        }
+                                        @Override
+                                        public void onFailure(Call<Account> call, Throwable t) {
+                                            Log.d("DEBUG", "Fail: " + t);
+                                        }
+                                    });
+                                }
+                            }else{
+
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<Account> call, Throwable t) {
+                            Log.d("DEBUG", "Fail: " + t);
+                        }
+                    });
+                }
+            }
+        });
+
+        binding.btnToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                Navigation.findNavController(v).navigate(R.id.navigation_login, bundle);
+            }
+        });
+
+        return root;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        BottomNavigationView navBar = getActivity().findViewById(R.id.nav_view);
+        navBar.setVisibility(View.VISIBLE);
     }
 }
