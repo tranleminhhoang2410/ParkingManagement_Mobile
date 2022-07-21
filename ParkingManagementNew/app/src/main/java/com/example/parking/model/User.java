@@ -8,12 +8,19 @@ public class User implements Serializable {
 
     @SerializedName("id")
     public int id;
+    @SerializedName("name")
     public String name;
+    @SerializedName("email")
     public String email;
+    @SerializedName("phone")
     public String phone;
+    @SerializedName("cityId")
     public int cityId;
+    @SerializedName("districtId")
     public int districtId;
+    @SerializedName("wardId")
     public int wardId;
+    @SerializedName("feedback")
     public String feedback;
 //    public ICollection<VehicleDTO> Vehicles;
 

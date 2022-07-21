@@ -6,14 +6,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.parking.databinding.ActivityUserPageBinding;
-import com.example.parking.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserPage extends AppCompatActivity {

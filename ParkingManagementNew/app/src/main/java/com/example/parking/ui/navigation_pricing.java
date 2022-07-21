@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parking.R;
-import com.example.parking.apiService.AppApiService;
 import com.example.parking.databinding.FragmentPricingPageBinding;
-import com.example.parking.model.VehicleType;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
