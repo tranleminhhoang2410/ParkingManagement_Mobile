@@ -13,10 +13,12 @@ namespace ParkingManagement.Controllers
     public class SlotController : ControllerBase
     {
         private readonly ISlotService slotService;
+        private readonly IInvoiceService invoiceService;
 
-        public SlotController(ISlotService slotService)
+        public SlotController(ISlotService slotService, IInvoiceService invoiceService)
         {
             this.slotService = slotService;
+            this.invoiceService = invoiceService;
         }
 
         [HttpGet("GetAll")]
@@ -41,8 +43,15 @@ namespace ParkingManagement.Controllers
             foreach (LotRow r in slotService.toView(E)) lotRows.Add(r);
 
             return Ok(lotRows);
-        } 
-        
+        }
+
+        [HttpGet("GetArea/{area}")]
+        public async Task<IActionResult> GetArea(string area)
+        {
+            IEnumerable<SlotDTO> slots = (await slotService.GetAll()).Where(c=>c.Area.Equals(area)).OrderBy(c=>c.Position);
+            return Ok(slots);
+        }
+
         [HttpGet("GetAll/{typeId}")]
         public async Task<ActionResult<IEnumerable<SlotDTO>>> GetAllSlotByType(int typeId)
         {

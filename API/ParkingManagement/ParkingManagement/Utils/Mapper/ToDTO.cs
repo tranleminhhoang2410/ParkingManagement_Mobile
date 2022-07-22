@@ -65,7 +65,8 @@ namespace ParkingManagement.Utils.Mapper
                     VehicleName = vehicle.VehicleName,
                     VehicleTypeId = vehicle.VehicleTypeId,
                     VehicleType = Map(vehicle.VehicleType),
-                    IsParking = vehicle.IsParking
+                    IsParking = vehicle.IsParking,
+                    UserId = vehicle.UserID
                 };
 
                 foreach (Invoice invoice in vehicle.Invoices)
@@ -91,7 +92,7 @@ namespace ParkingManagement.Utils.Mapper
                     PricePerMonth = vehicleType.PricePerMonth,
                     PricePerWeek = vehicleType.PricePerWeek,
                     PricePerYear = vehicleType.PricePerYear,
-                    TypeName = vehicleType.TypeName
+                    TypeName = vehicleType.TypeName,
                 };
 
             }
@@ -135,7 +136,8 @@ namespace ParkingManagement.Utils.Mapper
                     Position = int.Parse(position),
                     Status = slot.Status,
                     VehicleTypeId = slot.VehicleTypeId,
-                    VehicleTypeName = slot.VehicleType.TypeName
+                    VehicleTypeName = slot.VehicleType.TypeName,
+                    ParkingVehicle = slot.Invoices.Count == 0 ? null : (slot.Invoices.FirstOrDefault(c => c.CheckoutTime == null) != null ? Map(slot.Invoices.FirstOrDefault(c => c.CheckoutTime == null).Vehicle) : null)
                 };
             }
             

@@ -35,10 +35,36 @@ namespace ParkingManagement.Controllers
             return await vehicleService.AddNewUserVehicle(vehicle, userID);
         }
 
+        [HttpPost("m_AddVehicle")]
+        public async Task<ActionResult<VehicleDTO>> AddVehicle2(int userID, string vehicleId, int typeId)
+        {
+            VehicleDTO vehicle = new VehicleDTO
+            {
+                Id = vehicleId,
+                VehicleTypeId = typeId
+            };
+
+            try
+            {
+                await vehicleService.AddNewUserVehicle(vehicle, userID);
+                return Ok(await vehicleService.GetById(vehicleId));
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }            
+        }
+
         [HttpGet("Get/UserVehicle/{userId}")]
         public async Task<ActionResult<IEnumerable<VehicleDTO>>> GetUserVehicle(int userId)
         {
             return Ok(await vehicleService.GetAllByUserID(userId));
+        }
+
+        [HttpGet("Get/Vehicle/{Id}")]
+        public async Task<ActionResult<VehicleDTO>> GetVehicle(String Id)
+        {
+            return Ok(await vehicleService.GetById(Id));
         }
 
         /// <summary>
@@ -91,6 +117,30 @@ namespace ParkingManagement.Controllers
             }
         }
 
+        [HttpPost("CheckIn2")]
+        public async Task<ActionResult<InvoiceDTO>> CheckIn2(string vehicleId, string slotId)
+        {
+            InvoiceDTO invoiceDTO = new InvoiceDTO
+            {
+                VehicleId = vehicleId,
+                SlotId = slotId
+            };
+
+            try
+            {
+                string note = "";
+                note += await invoiceService.AddNewInvoice(invoiceDTO);
+                note += await slotService.SetParkingSlotStatus(slotId, true);
+                note += await vehicleService.SetVehicleIsParking(vehicleId, true);
+
+                return invoiceDTO;
+            }
+            catch (Exception e)
+            {
+                return BadRequest("ERROR: " + e.Message);
+            }
+        }
+
         /// <summary>
         /// <---This action call when user clicks a parked slot to check out--->
         /// </summary>
@@ -114,7 +164,7 @@ namespace ParkingManagement.Controllers
                                         + parkingTime[1] * parkingType.PricePerDay
                                         + parkingTime[2] * parkingType.PricePerWeek
                                         + parkingTime[3] * parkingType.PricePerMonth
-                                        + parkingTime[4] * parkingType.PricePerYear;
+                                        + parkingTime[4] * parkingType.PricePerYear + parkingType.PricePerHour;
 
                 return Ok(invoiceDTO);
             }
@@ -139,6 +189,99 @@ namespace ParkingManagement.Controllers
             catch (Exception e)
             {
                 return BadRequest("ERROR: " + e.Message);
+            }
+        }
+
+        [HttpPost("CheckOut2")]
+        public async Task<ActionResult<InvoiceDTO>> CheckOut2(InvoiceDTO invoiceDTO)
+        {
+            try
+            {
+                string note = "";
+                note += await invoiceService.UpdateInvoice(invoiceDTO);
+                note += await slotService.SetParkingSlotStatus(invoiceDTO.SlotId, false);
+                note += await vehicleService.SetVehicleIsParking(invoiceDTO.VehicleId, false);
+
+                return await invoiceService.GetById(invoiceDTO.Id);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("ERROR: " + e.Message);
+            }
+        }
+
+        [HttpGet("GetByVehicle/{vehicleCode}")]
+        public async Task<ActionResult<IEnumerable<InvoiceDTO>>> GetInvoiceByVehicle(string vehicleCode)
+        {
+            try
+            {
+                IEnumerable<InvoiceDTO> invoices = await invoiceService.GetByVehicleId(vehicleCode);
+
+                foreach(InvoiceDTO invoice in invoices)
+                {
+                    if (invoice.CheckoutTime == null)
+                    {
+                        invoice.CheckoutTime = DateTime.Parse(DateTime.MinValue.ToString("MM/dd/yyyy HH:mm:ss"));
+                    }
+                }
+
+                return Ok(invoices);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("GetInvoice/{id}")]
+        public async Task<ActionResult<InvoiceDTO>> GetInvoiceById(int id)
+        {
+            try
+            {
+                return Ok(await invoiceService.GetById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("UserParkingInvoice/{userID}")]
+        public async Task<ActionResult<IEnumerable<InvoiceDTO>>> UserParkingInvoice(int userID)
+        {
+            try
+            {
+                List<InvoiceDTO> invoices = new List<InvoiceDTO>();
+
+                IEnumerable<VehicleDTO> userVehicleList = await vehicleService.GetAllByUserID(userID);
+                foreach(VehicleDTO v in userVehicleList)
+                {
+                    foreach(InvoiceDTO invoice in await invoiceService.GetByVehicleId(v.Id))
+                    {
+                        if (invoice.CheckoutTime == null)
+                        {
+                            invoice.CheckoutTime = DateTime.Parse(DateTime.MinValue.ToString("MM/dd/yyyy HH:mm:ss"));
+
+                            int[] parkingTime = await invoiceService.CalculateparkingTime(invoice.CheckinTime, DateTime.Parse(DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")));
+
+                            VehicleTypeDTO parkingType = await vehicleTypeService.GetById((await slotService.GetByID(invoice.SlotId)).VehicleTypeId);
+
+                            invoice.TotalPaid = parkingTime[0] * parkingType.PricePerHour
+                                                    + parkingTime[1] * parkingType.PricePerDay
+                                                    + parkingTime[2] * parkingType.PricePerWeek
+                                                    + parkingTime[3] * parkingType.PricePerMonth
+                                                    + parkingTime[4] * parkingType.PricePerYear + parkingType.PricePerHour;
+
+                            invoices.Add(invoice);
+                        }
+                    }
+                }
+
+                return Ok(invoices);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }

@@ -69,7 +69,7 @@ app.UseCors(builder =>
         .AllowAnyMethod();
 });
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthentication();
 

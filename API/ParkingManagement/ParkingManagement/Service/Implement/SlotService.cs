@@ -17,6 +17,8 @@ namespace ParkingManagement.Service.Implement
         {
             List<SlotDTO?> slots = await _db.Slots
                 .Include(c => c.VehicleType)
+                .Include(c => c.Invoices)
+                .ThenInclude(c => c.Vehicle)
                 .Select(c => ToDTO.Map(c))
                 .ToListAsync();
             return slots;

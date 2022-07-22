@@ -10,5 +10,6 @@ namespace ParkingManagement.Service
         public Task<UserDTO> GetUserByPhone(string phone);
         public Task<Boolean> AddUser(UserDTO userDTO);
         public Task<Boolean> UpdateUser(UserDTO userDTO);
+        public Task<Boolean> UpdateUser2(UserDTO userDTO);
     }
 }

@@ -9,5 +9,6 @@
         public VehicleTypeDTO VehicleType { get; set; }
         public ICollection<InvoiceDTO> Invoices { get; set; } = new HashSet<InvoiceDTO>();
         public Boolean IsParking { get; set; }
+        public int UserId { get; set; }
     }
 }

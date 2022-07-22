@@ -7,5 +7,6 @@
         public Boolean Status { get; set; }
         public int VehicleTypeId { get; set; }
         public string VehicleTypeName { get; set; }
+        public VehicleDTO ParkingVehicle { get; set; }
     }
 }

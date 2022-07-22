@@ -66,5 +66,21 @@ namespace ParkingManagement.Controllers
             }
 
         }
+
+        [HttpPut("Update2")]
+        public async Task<ActionResult<UserDTO>> Update2(UserDTO userDTO)
+        {
+            Boolean updated = await userService.UpdateUser2(userDTO);
+            if (updated)
+            {
+                UserDTO user = await userService.GetUserById(userDTO.Id);
+                return Ok(user);
+            }
+            else
+            {
+                return BadRequest("update fail");
+            }
+
+        }
     }
 }

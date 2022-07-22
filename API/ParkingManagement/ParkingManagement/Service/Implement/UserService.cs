@@ -71,5 +71,18 @@ namespace ParkingManagement.Service.Implement
             await _db.SaveChangesAsync();
             return true;
         }
+
+        public async Task<bool> UpdateUser2(UserDTO userDTO)
+        {
+            User? _user = await _db.Users.FirstOrDefaultAsync(c => c.Id.Equals(userDTO.Id));
+            if (_user == null) return false;
+
+            _user.Name = userDTO.Name;
+            _user.Email = userDTO.Email;
+            _user.Phone = userDTO.Phone;
+
+            await _db.SaveChangesAsync();
+            return true;
+        }
     }
 }

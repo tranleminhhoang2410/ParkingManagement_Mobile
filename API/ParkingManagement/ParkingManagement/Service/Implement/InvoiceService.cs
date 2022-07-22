@@ -60,9 +60,11 @@ namespace ParkingManagement.Service.Implement
             throw new NotImplementedException();
         }
 
-        public Task<InvoiceDTO> GetById(int Id)
+        public async Task<InvoiceDTO> GetById(int Id)
         {
-            throw new NotImplementedException();
+            InvoiceDTO? invoice = ToDTO.Map(await _db.Invoices
+                .FirstOrDefaultAsync(c => c.Id == Id));
+            return invoice;
         }
 
         public Task<IEnumerable<InvoiceDTO>> GetByUserId(int userId)
@@ -70,9 +72,11 @@ namespace ParkingManagement.Service.Implement
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<InvoiceDTO>> GetByVehicleId(string vehicleId)
+        public async Task<IEnumerable<InvoiceDTO>> GetByVehicleId(string vehicleId)
         {
-            throw new NotImplementedException();
+            List<InvoiceDTO?> invoices = await _db.Invoices.Where(c => c.VehicleId.Equals(vehicleId)).Include(c => c.Slot).Select(c => ToDTO.Map(c))
+                .ToListAsync();
+            return invoices;
         }
 
         public async Task<InvoiceDTO> GetIsParkingInvoiceBySlot(string slotId)
