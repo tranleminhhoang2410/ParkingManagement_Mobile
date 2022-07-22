@@ -22,6 +22,12 @@ public interface VehicleApi{
     @GET("api/Vehicle/CheckOut/{lotId}")
     Call<Invoice> GetCheckOutInvoice(@Path(value = "lotId") String id);
 
+    @GET("api/Vehicle/GetByVehicle/{vehicleId}")
+    Call<ArrayList<Invoice>> GetVehicleInvoice(@Path(value = "vehicleId") String id);
+
+    @GET("api/Vehicle/UserParkingInvoice/{userId}")
+    Call<ArrayList<Invoice>> GetUserParkingInvoice(@Path(value = "userId") int id);
+
     @POST("api/Vehicle/m_AddVehicle")
     Call<Vehicle> AddVehicle(
             @Query("userID") int userId,

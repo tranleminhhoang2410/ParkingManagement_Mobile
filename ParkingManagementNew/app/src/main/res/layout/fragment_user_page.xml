@@ -136,6 +136,17 @@
                     android:textColor="@color/black"
                     android:backgroundTint="#F1C50E"
                     android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"></Button>
+
+                <Button
+                    android:id="@+id/btn_toInvoices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:text="Your invoices"
+                    android:paddingLeft="50dp"
+                    android:textColor="@color/black"
+                    android:backgroundTint="#F1C50E"
+                    android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"></Button>
             </LinearLayout>
 
         </LinearLayout>

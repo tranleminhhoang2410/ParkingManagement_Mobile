@@ -153,7 +153,9 @@ public class navigation_parking_lots extends Fragment {
         binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DataHolder.setDataInstanceNull();
+                Bundle bundle = new Bundle();
+                Navigation.findNavController(v).navigate(R.id.navigation_home, bundle);
             }
         });
     }

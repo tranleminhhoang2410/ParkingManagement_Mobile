@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.example.parking.databinding.ActivityUserPageBinding;
 import com.example.parking.model.User;
+import com.example.parking.utils.DataHolder;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UserPage extends AppCompatActivity {
@@ -43,5 +45,14 @@ public class UserPage extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(DataHolder.getInstance().getLoginUser()==null){
+//            Toast.makeText(this, "Noooooooo!!!!!", Toast.LENGTH_SHORT).show();
+        }else{
+            super.onBackPressed();
+        }
     }
 }

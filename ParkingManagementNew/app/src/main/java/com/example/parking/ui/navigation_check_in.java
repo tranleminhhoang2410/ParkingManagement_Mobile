@@ -202,7 +202,9 @@ public class navigation_check_in extends Fragment {
         binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DataHolder.setDataInstanceNull();
+                Bundle bundle = new Bundle();
+                Navigation.findNavController(v).navigate(R.id.navigation_home, bundle);
             }
         });
     }

@@ -2,6 +2,10 @@ package com.example.parking.ui;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +13,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
 import com.example.parking.R;
 import com.example.parking.adapter.InvoiceAdapter;
 import com.example.parking.apiService.AppApiService;
+import com.example.parking.databinding.FragmentCheckInBinding;
 import com.example.parking.databinding.FragmentNavigationUserInvoiceBinding;
 import com.example.parking.model.Invoice;
 import com.example.parking.model.Vehicle;
@@ -143,7 +145,9 @@ public class navigation_user_invoice extends Fragment {
         binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DataHolder.setDataInstanceNull();
+                Bundle bundle = new Bundle();
+                Navigation.findNavController(v).navigate(R.id.navigation_home, bundle);
             }
         });
     }

@@ -90,6 +90,8 @@ public class AppApiService {
     public Call<Invoice> CheckIn(String vehicleId, String lotId){return  Api_Vehicle.CheckIn(vehicleId, lotId);}
     public Call<Invoice> GetCheckOutInvoice(String lotId){return Api_Vehicle.GetCheckOutInvoice(lotId);}
     public Call<Invoice> CheckOut(Invoice invoice){return Api_Vehicle.CheckOut(invoice);}
+    public Call<ArrayList<Invoice>> VehicleInvoices(String vehicleId) {return Api_Vehicle.GetVehicleInvoice(vehicleId);}
+    public Call<ArrayList<Invoice>> GetUserParkingInvoice(int userid) {return Api_Vehicle.GetUserParkingInvoice(userid);}
 
     public Call<ArrayList<Lot>> GetAllLots(String area) {return Api_Lot.getAllLots(area);}
 

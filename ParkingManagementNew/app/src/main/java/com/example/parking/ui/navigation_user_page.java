@@ -107,6 +107,14 @@ public class navigation_user_page extends Fragment {
                 }
             });
 
+            binding.btnToInvoices.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    Navigation.findNavController(v).navigate(R.id.navigation_user_invoice, bundle);
+                }
+            });
+
         }
 
         return root;
@@ -133,6 +141,9 @@ public class navigation_user_page extends Fragment {
         binding.btnLogInOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DataHolder.setDataInstanceNull();
+                Bundle bundle = new Bundle();
+                Navigation.findNavController(v).navigate(R.id.navigation_home, bundle);
 
             }
         });

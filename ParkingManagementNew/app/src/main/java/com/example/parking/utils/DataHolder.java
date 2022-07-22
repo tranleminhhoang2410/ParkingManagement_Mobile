@@ -29,4 +29,8 @@ public class DataHolder {
         this.loginUser = loginUser;
         Log.d("DEBUG", "set user: name=" + loginUser.getName());
     }
+
+    public static void setDataInstanceNull() {
+        DataHolder.dataInstance = null;
+    }
 }
