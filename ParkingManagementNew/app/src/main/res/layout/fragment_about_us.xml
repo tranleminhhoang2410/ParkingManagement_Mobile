@@ -48,6 +48,60 @@
                 android:layout_marginTop="25dp"
                 android:textColor="@color/default_yellow"
                 android:textStyle="bold"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-The parking lot has 5 areas: A, B, C, D, E. While area A, B, C for Car, area D for Bus and Area E for Truck"
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-Each area has many rows, each row was  marked by a number that user can enroll to have a slot."
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-Before taking a row, user must enroll his/her vehicles with the system. A user can enroll one or more vehicles. The system will record the time that user checked in."
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-When user leave the parking lot, the system will record the checked out time and write into an invoice. Therefore, user must pay for his/her turn when using"
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-Price table for each type of vehicles was listed in the system."
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-User will give money to the security guard when leave out."
+                android:textSize="16dp"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="25dp"
+                android:textColor="@color/default_yellow"></TextView>
         </LinearLayout>
     </LinearLayout>
 </layout>
