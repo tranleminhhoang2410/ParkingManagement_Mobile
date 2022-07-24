@@ -35,7 +35,7 @@
 - Run the query on sql file to get data.
     
     ![](https://i.ibb.co/s5bX71H/runquery.jpg)
-- Open and run the ASP.NET solution to get API.
+- Open the ASP.NET solution and modify ConnectionString in appsetting.json, then run solution to get API.
 
     ![](https://i.ibb.co/9wX6vtG/runapi.jpg)
 - Open and run the Android Project to use the application.
