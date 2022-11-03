@@ -22,7 +22,7 @@
 # Project Folder Structure
 - API: Resfult API with ASP.NET.
 - ParkingManagementNew: Android Project.
-- ParkignDatabase_WithData.sql: Contain query about database.
+- ParkingDatabase_WithData.sql: Contain query about database.
 
 
 # Usage
